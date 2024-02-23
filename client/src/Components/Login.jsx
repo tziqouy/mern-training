@@ -1,19 +1,28 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./style.css"; // Add this line to import the style.css file
+import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:3000/auth/login", values)
       .then((res) => {
-        console.log(res.data);
+        if (res.data.loginStatus) {
+          navigate("/dashboard");
+        } else {
+          alert("Invalid email or password");
+        }
       })
       .catch((err) => {
         console.log(err);
