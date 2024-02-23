@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/api/login", values)
+      .post("http://localhost:3000/auth/login", values)
       .then((res) => {
         console.log(res.data);
       })
