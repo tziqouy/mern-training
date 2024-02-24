@@ -9,7 +9,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+  const [error , setError] = useState();
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
 
@@ -21,7 +21,7 @@ const Login = () => {
         if (res.data.loginStatus) {
           navigate("/dashboard");
         } else {
-          alert("Invalid email or password");
+            setError(res.data.errorMessage);
         }
       })
       .catch((err) => {
@@ -32,10 +32,13 @@ const Login = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 loginPage">
       <div className="p-3 rounded w-25 border loginForm">
+        <div className="text-warning">
+            {error && <b>{error}</b>}
+        </div>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="emai">
+            <label>
               <strong>Email</strong>
             </label>
             <input
@@ -48,7 +51,7 @@ const Login = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password">
+            <label>
               <strong>Password</strong>
             </label>
             <input
