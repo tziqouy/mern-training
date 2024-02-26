@@ -20,7 +20,10 @@ router.post("/login", (req, res) => {
         });
         res.json({ loginStatus: true, token });
       } else {
-        res.json({ loginStatus: false, errorMessage: "Invalid email or password" });
+        res.json({
+          loginStatus: false,
+          errorMessage: "Invalid email or password",
+        });
       }
     }
   });
