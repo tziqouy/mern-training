@@ -10,7 +10,7 @@ const AddEmployee = () => {
     lastname: "",
     gender: 0,
     email: "",
-    password: "hunkbako@101",
+    password: "",
   });
   const [selectedOption, setSelectedOption] = useState("0");
   const [error, setError] = useState();
