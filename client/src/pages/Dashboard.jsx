@@ -12,9 +12,7 @@ const Dashboard = () => {
               to="/dashboard"
               className="d-flex align-items-center pb-3 mb-md-1 mt-md-3 me-md-auto text-white text-decoration-none"
             >
-              <span className="fs-5 fw-bolder d-none d-sm-inline">
-                BMT
-              </span>
+              <span className="fs-5 fw-bolder d-none d-sm-inline">BMT</span>
             </Link>
             <ul
               className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
@@ -42,6 +40,15 @@ const Dashboard = () => {
               </li>
               <li className="w-100">
                 <Link
+                  to="/dashboard/capabilities"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                  <i className="fs-4 bi-person-gear ms-2"></i>
+                  <span className="ms-2 d-none d-sm-inline">Capabilities</span>
+                </Link>
+              </li>
+              <li className="w-100">
+                <Link
                   to="/dashboard/profile"
                   className="nav-link px-0 align-middle text-white"
                 >
@@ -50,9 +57,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li className="w-100">
-              <Link
-                  className="nav-link px-0 align-middle text-white"
-                >
+                <Link className="nav-link px-0 align-middle text-white">
                   <i className="fs-4 bi-power ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Logout</span>
                 </Link>
@@ -61,10 +66,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="col p-0 m-0">
-            <div className="p-2 d-flex justify-content-center shadow">
-                <h4>Bench Management Tracker</h4>
-            </div>
-            <Outlet />
+          <div className="p-2 d-flex justify-content-center shadow">
+            <h4>Bench Management Tracker</h4>
+          </div>
+          <Outlet />
         </div>
       </div>
     </div>
