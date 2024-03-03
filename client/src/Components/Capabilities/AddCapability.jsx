@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const addCapability = () => {
-  const [capability, setCapaddCapability] = useState({ name: "" });
+  const [capability, setCapability] = useState({ name: "" });
   const [error, setError] = useState();
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ const addCapability = () => {
                 id="name"
                 placeholder="Name"
                 onChange={(e) => {
-                  setCapaddCapability({
+                  setCapability({
                     ...capability,
                     name: e.target.value,
                   });
@@ -60,7 +60,7 @@ const addCapability = () => {
             </div>
             <div className="col-12 mt-2">
               <Link
-                to="/dashboard/capability"
+                to="/dashboard/capabilities"
                 type="button"
                 className=" btn btn-danger w-100"
               >

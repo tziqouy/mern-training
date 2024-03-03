@@ -5,8 +5,9 @@ import Login from "./Components/Login";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Profile from "./Components/Profile";
-import CapabilityList from "./Components/Capability/CapabilityList";
-import AddCapability from "./Components/Capability/AddCapability";
+import CapabilityList from "./Components/Capabilities/CapabilityList";
+import AddCapability from "./Components/Capabilities/AddCapability";
+import EditCapability from "./Components/Capabilities/EditCapability";
 import EmployeeList from "./Components/Employees/EmployeeList";
 import AddEmployee from "./Components/Employees/AddEmployee";
 
@@ -24,8 +25,12 @@ function App() {
               element={<CapabilityList />}
             ></Route>
             <Route
-              path="/dashboard/addCapability"
+              path="/dashboard/capabilities/add"
               element={<AddCapability />}
+            ></Route>
+            <Route
+              path="/dashboard/capabilities/edit/:id"
+              element={<EditCapability />}
             ></Route>
             <Route
               path="/dashboard/employee"

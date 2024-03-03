@@ -22,7 +22,7 @@ const CapabilityList = () => {
 
   return (
     <div className="px-5 mt-3">
-      <Link to="/dashboard/addCapability" className="btn btn-success btn-md">
+      <Link to="/dashboard/capabilities/add" className="btn btn-success btn-md">
         <i className="bi bi-person-fill-add"></i>
       </Link>
       <div className="card mt-3">
@@ -47,14 +47,14 @@ const CapabilityList = () => {
                     <td>{capab.id}</td>
                     <td>{capab.name}</td>
                     <td>
-                      <Link
+                      {/* <Link
                         to={`/dashboard/viewCapability/${capab.id}`}
                         className="btn btn-primary btn-sm me-2"
                       >
                         <i className="bi bi-eye-fill"></i>
-                      </Link>
+                      </Link> */}
                       <Link
-                        to={`/dashboard/editCapability/${capab.id}`}
+                        to={`/dashboard/capabilities/edit/${capab.id}`}
                         className="btn btn-warning btn-sm me-2"
                       >
                         <i className="bi bi-pencil-fill"></i>

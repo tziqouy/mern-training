@@ -25,5 +25,16 @@ router.post("/add", (req, res) => {
     }
   });
 });
+router.patch("/edit/:id", (req, res) => {
+  const sql = `UPDATE capabilities SET name = ? WHERE id = ?`;
+  const values = [req.body.name, req.params.id];
+  db.query(sql, values, (err, result) => {
+    if (err) {
+      res.json({ Status: false, errorMessage: err });
+    } else {
+      res.json({ Status: true, Result: result });
+    }
+  });
+});
 
 export { router as capabilityRouter };
